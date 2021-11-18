@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: f4d35e8c8b43e744190d1dc5da4a0d4b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5053619667850065779
+    second: railSpritesheet_0
+  - first:
+      213: -5208218912543776230
+    second: railSpritesheet_1
+  - first:
+      213: -6202742167704514946
+    second: railSpritesheet_2
+  - first:
+      213: 508204604713063253
+    second: railSpritesheet_3
+  - first:
+      213: -3523597458299416047
+    second: railSpritesheet_4
+  - first:
+      213: 2702175786797089940
+    second: railSpritesheet_5
+  - first:
+      213: -3623043577079993264
+    second: railSpritesheet_6
+  - first:
+      213: -5132163912176109490
+    second: railSpritesheet_7
+  - first:
+      213: 3911263021185105993
+    second: railSpritesheet_8
+  - first:
+      213: 6448633163982637297
+    second: railSpritesheet_10
+  - first:
+      213: 5013422400777909079
+    second: railSpritesheet_11
+  - first:
+      213: 4522366575625323714
+    second: railSpritesheet_12
+  - first:
+      213: -5031588589434910030
+    second: railSpritesheet_13
+  - first:
+      213: -5359184201921718624
+    second: railSpritesheet_14
+  - first:
+      213: -1290954822823572859
+    second: railSpritesheet_15
+  - first:
+      213: 992070040541691342
+    second: railSpritesheet_16
+  - first:
+      213: 1203055881891399620
+    second: railSpritesheet_17
+  - first:
+      213: -5594099393425338009
+    second: railSpritesheet_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: railSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 69
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d888ed3ffafedd9b0800000000000000
+      internalID: -5053619667850065779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 69
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a126b5d4e70b8b7b0800000000000000
+      internalID: -5208218912543776230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 69
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ec2acacde6be9a0800000000000000
+      internalID: -6202742167704514946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 69
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553d32935618d0700800000000000000
+      internalID: 508204604713063253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 69
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112189ec7caa91fc0800000000000000
+      internalID: -3523597458299416047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 49
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494c3b4bf8e008520800000000000000
+      internalID: 2702175786797089940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 49
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ce266ff0d58bdc0800000000000000
+      internalID: -3623043577079993264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 49
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48f9adfc14e6c8b0800000000000000
+      internalID: -5132163912176109490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 49
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9400cd8bef8974630800000000000000
+      internalID: 3911263021185105993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 22
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f80df142b52e7950800000000000000
+      internalID: 6448633163982637297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 22
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7537a5b7c11439540800000000000000
+      internalID: 5013422400777909079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 22
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c44f34a07ca2ce30800000000000000
+      internalID: 4522366575625323714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 22
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bac2de16d43c2ab0800000000000000
+      internalID: -5031588589434910030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 22
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6129ecc5a50a5b0800000000000000
+      internalID: -5359184201921718624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a068cad6b951ee0800000000000000
+      internalID: -1290954822823572859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 2
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd7bc6127a84cd00800000000000000
+      internalID: 992070040541691342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 2
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7c41553fc12b010800000000000000
+      internalID: 1203055881891399620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: railSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 2
+        width: 127
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76197a09d34cd52b0800000000000000
+      internalID: -5594099393425338009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
