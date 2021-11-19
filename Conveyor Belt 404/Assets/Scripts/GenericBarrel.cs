@@ -6,16 +6,6 @@ public class GenericBarrel : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D myRb;
     [SerializeField] private float speed;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionStay2D(Collision2D other)
     {

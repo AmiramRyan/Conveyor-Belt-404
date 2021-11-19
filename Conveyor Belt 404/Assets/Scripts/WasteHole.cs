@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class WasteHole : MonoBehaviour
 {
+    public ScoreManager ScoreManager;
+    public string acceptedTag;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("ToxBarrle"))
+        if (other.CompareTag(acceptedTag))
         {
-            Destroy(other.gameObject);
+            //add score
+            ScoreManager.AddScore(ScoreManager.correctBarrelValue);
         }
+        else
+        {
+            //decrease score and increase strikes
+            ScoreManager.AddScore(ScoreManager.wrongBarrelValue);
+        }
+        Destroy(other.gameObject);
     }
 }

@@ -7,6 +7,9 @@ TagManager:
   - ConvBeltRight
   - ConvBeltLeft
   - ToxBarrle
+  - Ui_btns
+  - Tox_barrel_green
+  - Tox_barrel_yellow
   layers:
   - Default
   - TransparentFX

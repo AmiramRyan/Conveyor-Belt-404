@@ -9,14 +9,9 @@ public class Timer : MonoBehaviour
     public Text clockMin;
     [SerializeField] private float clockSecCounter;
     [SerializeField] private int clockMinCounter;
-    [SerializeField] private bool timerRunning;
+    [SerializeField] private SpawnManager spawnManager;
+    public bool timerRunning;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (timerRunning)
@@ -32,7 +27,7 @@ public class Timer : MonoBehaviour
                 else
                 {
                     //time is up!
-                    Debug.Log("Time Up!");
+                    spawnManager.spawnerActive = false;
                     timerRunning = false;
                 }
 

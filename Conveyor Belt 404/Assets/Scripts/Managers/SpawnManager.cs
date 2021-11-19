@@ -9,12 +9,11 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private bool canSpawn;
     [SerializeField] private float timeBetweenSpawnsMax;
     [SerializeField] private float timeBetweenSpawnsMin;
-    [SerializeField] private bool spawnerActive;
+    public bool spawnerActive;
 
     private void Start()
     {
         canSpawn = true;
-        spawnerActive = false;
     }
     void Update()
     {
