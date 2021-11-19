@@ -32,15 +32,26 @@ public class SpawnManager : MonoBehaviour
     private void Spawn()
     {
         int rnd = Random.Range(0, 2);
+        int rndColor = Random.Range(0, 2);
+        GameObject tempPrefab;
+        if (rndColor == 1)
+        {
+            tempPrefab = toxGreenPrefab;
+        }
+        else
+        {
+            tempPrefab = toxYellowPrefab;
+        }
         //left
         if (rnd == 1)
         {
-            Instantiate(toxGreenPrefab, originLeft.position, Quaternion.identity);
+            
+            Instantiate(tempPrefab, originLeft.position, Quaternion.identity);
         }
         //right
         else
         {
-            Instantiate(toxGreenPrefab, originRight.position, Quaternion.identity);
+            Instantiate(tempPrefab, originRight.position, Quaternion.identity);
         }
         canSpawn = false;
     }
