@@ -10,9 +10,15 @@ public class LeverController : MonoBehaviour
     private bool rotate;
     private float maxAngle = 75f;
     private float minAngle = -75f;
+    public Animator btn_anim;
     private void Start()
     {
         rotate = false;
+        btn_anim = GameObject.FindGameObjectWithTag("Ui_btns").GetComponent<Animator>();
+        if (!btn_anim)
+        {
+            Debug.LogError("Animator for ui btns not found!");
+        }
     }
 
     public void Update()
@@ -22,11 +28,19 @@ public class LeverController : MonoBehaviour
         {
             dir = -1;
             rotate = true;
+            btn_anim.SetTrigger("right");
         }
         else if (Input.GetButtonDown("left"))
         {
             dir = 1;
             rotate = true;
+            btn_anim.SetTrigger("left");
+        }
+        else if (Input.GetButtonDown("up"))
+        {
+            dir = 0;
+            rotate = true;
+            btn_anim.SetTrigger("up");
         }
 
         //rotate
@@ -35,18 +49,39 @@ public class LeverController : MonoBehaviour
             Quaternion wheelRot = wheel.transform.rotation;
             Vector3 wheelRotEuler = wheelRot.eulerAngles;
             float wAngle = WrapAngle(wheelRotEuler.z);
-            wheel.transform.Rotate(Vector3.forward, turningSpeed * dir);
-            if (wAngle >= maxAngle || wAngle <= minAngle)
+
+            if (dir == 0) //return to middle
             {
-                if(wAngle >= maxAngle)
+                if(wAngle > 0.21) //rotate right
                 {
-                    wheel.transform.rotation = Quaternion.Euler(new Vector3(wheel.transform.rotation.eulerAngles.x, wheel.transform.rotation.eulerAngles.y, maxAngle - 0.001f));
+                    wheel.transform.Rotate(Vector3.forward, turningSpeed * -1);
                 }
-                else
+                else if (wAngle < -0.21) //rotate left
                 {
-                    wheel.transform.rotation = Quaternion.Euler(new Vector3(wheel.transform.rotation.eulerAngles.x, wheel.transform.rotation.eulerAngles.y, minAngle + 0.001f));
+                    wheel.transform.Rotate(Vector3.forward, turningSpeed * 1);
                 }
-                rotate = false;
+                else//stop condition the wAngle is 0
+                {
+                    wheel.transform.rotation = Quaternion.Euler(new Vector3(wheel.transform.rotation.eulerAngles.x, wheel.transform.rotation.eulerAngles.y,0));
+                    rotate = false;
+                }
+            }
+
+            else //go to the side
+            {
+                wheel.transform.Rotate(Vector3.forward, turningSpeed * dir);
+                if (wAngle >= maxAngle || wAngle <= minAngle) //stop condition
+                {
+                    if (wAngle >= maxAngle)
+                    {
+                        wheel.transform.rotation = Quaternion.Euler(new Vector3(wheel.transform.rotation.eulerAngles.x, wheel.transform.rotation.eulerAngles.y, maxAngle - 0.001f));
+                    }
+                    else
+                    {
+                        wheel.transform.rotation = Quaternion.Euler(new Vector3(wheel.transform.rotation.eulerAngles.x, wheel.transform.rotation.eulerAngles.y, minAngle + 0.001f));
+                    }
+                    rotate = false;
+                }
             }
         }
     }
