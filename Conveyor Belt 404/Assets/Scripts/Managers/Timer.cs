@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class Timer : GenericSingletonClass<MonoBehaviour>
 {
     public Text clockSec;
     public Text clockMin;
-    [SerializeField] private float clockSecCounter;
-    [SerializeField] private int clockMinCounter;
-    [SerializeField] private SpawnManager spawnManager;
+    private float clockSecCounter;
+    private int clockMinCounter;
     public bool timerRunning;
+    public GameManager gameManager;
+
+
+    void Start()
+    {
+        gameManager = GameObject.FindWithTag("game_manager").GetComponent<GameManager>();
+        if (!gameManager)
+        {
+            Debug.LogError("No game manager found in timer");
+        }
+    }
 
     void Update()
     {
@@ -27,8 +37,7 @@ public class Timer : MonoBehaviour
                 else
                 {
                     //time is up!
-                    spawnManager.spawnerActive = false;
-                    timerRunning = false;
+                    gameManager.EndGameMode(true); //won
                 }
 
             }
@@ -36,7 +45,7 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void UpdateClockUi()
+    private void UpdateClockUi()
     {
         if ((clockMinCounter / 10) <= 0) //single digit
         {
@@ -54,6 +63,18 @@ public class Timer : MonoBehaviour
         {
             clockSec.text = "" + (int)clockSecCounter;
         }
+    }
+
+    public void SetTimer(int min, float sec)
+    {
+        clockSecCounter = sec;
+        clockMinCounter = min;
+    }
+
+    public void EndlessTimer()
+    {
+        clockMin.text = "Over";
+        clockSec.text = "Time";
     }
         
 }

@@ -6,6 +6,16 @@ public class WasteHole : MonoBehaviour
 {
     public ScoreManager ScoreManager;
     public string acceptedTag;
+
+    private void Awake()
+    {
+        ScoreManager = GameObject.FindWithTag("score_manager").GetComponent<ScoreManager>();
+        if (!ScoreManager)
+        {
+            Debug.LogError("no score manager found on wastehole");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(acceptedTag))

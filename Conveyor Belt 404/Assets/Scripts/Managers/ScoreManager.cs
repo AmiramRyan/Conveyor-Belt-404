@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : GenericSingletonClass_Score<MonoBehaviour>
 {
+    public GameManager gameManager;
     [SerializeField] private Text scoreTxt; // the score txt element
     [SerializeField] private Text strikeText; 
     [SerializeField] private List<GameObject> lives; //img of the livs
-    [SerializeField] private SpawnManager spawnManager;
-    [SerializeField] private Timer timer;
     public int correctBarrelValue; //positive score
     public int wrongBarrelValue; //negetive score 
-
+    public bool scoreManagerActive;
     private int currentLives;
     private int currentScore;
 
+
     void Start()
     {
-        ResetValues();
-        spawnManager.spawnerActive = true;
-        timer.timerRunning = true;
-
+        gameManager = GameObject.FindWithTag("game_manager").GetComponent<GameManager>();
+        if(!gameManager)
+        {
+            Debug.LogError("No game manager found in score manager");
+        }
     }
 
     void Update()
     {
-        scoreTxt.text = currentScore + " $";
-        strikeText.text = ""+currentLives;
+        if (scoreManagerActive)
+        {
+            scoreTxt.text = currentScore + " $";
+            strikeText.text = "" + currentLives;
+        }
     }
 
     public void AddScore(int amount)
@@ -48,8 +52,7 @@ public class ScoreManager : MonoBehaviour
             lives[currentLives].SetActive(false);
 
             //lose stuff
-            spawnManager.spawnerActive = false;
-            //go back to menu
+            gameManager.EndGameMode(false); //lose
         }
         else 
         { 
@@ -57,7 +60,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void ResetValues()
+    private void ResetValues()
     {
         //reset stuff
         currentScore = 0;
@@ -69,4 +72,10 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void SetScoreManager(int positivePointsAmount, int negetivePointsAmount)
+    {
+        correctBarrelValue = positivePointsAmount;
+        wrongBarrelValue = negetivePointsAmount * -1;
+        ResetValues();
+    }
 }

@@ -11,13 +11,18 @@ public class LeverController : MonoBehaviour
     private float maxAngle = 75f;
     private float minAngle = -75f;
     public Animator btn_anim;
-    private void Start()
+    void Start()
     {
         rotate = false;
-        btn_anim = GameObject.FindGameObjectWithTag("Ui_btns").GetComponent<Animator>();
+        wheel = GameObject.FindWithTag("Wheel");
+        btn_anim = GameObject.FindWithTag("Ui_btns").GetComponent<Animator>();
+        if (!wheel)
+        {
+            Debug.LogError("No wheel found in lever controller");
+        }
         if (!btn_anim)
         {
-            Debug.LogError("Animator for ui btns not found!");
+            Debug.LogError("No Animator found in lever controller");
         }
     }
 

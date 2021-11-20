@@ -10,6 +10,9 @@ TagManager:
   - Ui_btns
   - Tox_barrel_green
   - Tox_barrel_yellow
+  - Wheel
+  - score_manager
+  - game_manager
   layers:
   - Default
   - TransparentFX
