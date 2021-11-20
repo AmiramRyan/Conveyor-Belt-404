@@ -13,7 +13,7 @@ public class ScoreManager : GenericSingletonClass_Score<MonoBehaviour>
     public int wrongBarrelValue; //negetive score 
     public bool scoreManagerActive;
     private int currentLives;
-    private int currentScore;
+    public int currentScore;
 
 
     void Start()

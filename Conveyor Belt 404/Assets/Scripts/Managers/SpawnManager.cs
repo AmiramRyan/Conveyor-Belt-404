@@ -6,11 +6,13 @@ public class SpawnManager : GenericSingletonClass_spawn<MonoBehaviour>
 { 
     [SerializeField] private Transform originLeft, originRight;
     [SerializeField] private GameObject toxGreenPrefab, toxYellowPrefab;
+    [SerializeField] private float timeBetweenEndlessProgress;
+    [SerializeField] private float changeBetweenEndlessProgress;
     private bool canSpawn;
     private float timeBetweenSpawnsMax;
     private float timeBetweenSpawnsMin;
+    private bool changeMax;
     public bool spawnerActive;
-
 
     void Update()
     {
@@ -64,4 +66,35 @@ public class SpawnManager : GenericSingletonClass_spawn<MonoBehaviour>
         yield return new WaitForSeconds(Random.Range(timeBetweenSpawnsMin, timeBetweenSpawnsMax));
         canSpawn = true;
     }
+
+    public void startEndlessSpawn()
+    {
+        StartCoroutine(FasterSpawnCo());
+    }
+
+    IEnumerator FasterSpawnCo()
+    {
+        changeMax = !changeMax;
+        Debug.Log(changeMax);
+        yield return new WaitForSeconds(timeBetweenEndlessProgress);
+        //change the spawn delay
+        if (changeMax)
+        {
+            timeBetweenSpawnsMax -= 0.22f;
+        }
+        else
+        {
+            timeBetweenSpawnsMin -= changeBetweenEndlessProgress;
+        }
+
+        if(timeBetweenSpawnsMin < 0.01f)
+        {
+            timeBetweenSpawnsMin = 0.01f;
+        }
+        else
+        {
+            startEndlessSpawn();
+        }
+    }
+
 }

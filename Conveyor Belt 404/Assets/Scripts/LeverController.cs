@@ -59,11 +59,11 @@ public class LeverController : MonoBehaviour
             {
                 if(wAngle > 0.21) //rotate right
                 {
-                    wheel.transform.Rotate(Vector3.forward, turningSpeed * -1);
+                    wheel.transform.Rotate(Vector3.forward, turningSpeed * -1 * Time.deltaTime);
                 }
                 else if (wAngle < -0.21) //rotate left
                 {
-                    wheel.transform.Rotate(Vector3.forward, turningSpeed * 1);
+                    wheel.transform.Rotate(Vector3.forward, turningSpeed * 1 * Time.deltaTime);
                 }
                 else//stop condition the wAngle is 0
                 {
@@ -74,7 +74,7 @@ public class LeverController : MonoBehaviour
 
             else //go to the side
             {
-                wheel.transform.Rotate(Vector3.forward, turningSpeed * dir);
+                wheel.transform.Rotate(Vector3.forward, turningSpeed * dir * Time.deltaTime);
                 if (wAngle >= maxAngle || wAngle <= minAngle) //stop condition
                 {
                     if (wAngle >= maxAngle)

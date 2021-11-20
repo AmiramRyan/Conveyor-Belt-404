@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameMode
 {
@@ -11,15 +12,36 @@ public enum GameMode
 
 public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
 {
+    [Header("Public managers and UI panels")]
     public ScoreManager scoreManager;
     public SpawnManager spawnManager;
     public Timer timer;
     public GameObject infoPanel;
     public GameObject mainMenuPanel;
     public GameObject gameUiPanel;
-    public GameMode currentGameMode;
+    public Text highScoreUiTextMain;
+    public Text highScoreUiTextInfo;
+    public HighScoreScript highscoreVal;
 
-    
+    private GameMode currentGameMode;
+    [Header("Game Stats")]
+    [SerializeField] private int timerMin;
+    [SerializeField] private float timerSec;
+    [SerializeField] private float fastestSpawnRateStory;
+    [SerializeField] private float slowestSpawnRateStory;
+    [SerializeField] private float fastestSpawnRateEndless;
+    [SerializeField] private float slowestSpawnRateEndless;
+
+    private static int goodBarrelSortPointValue = 25;
+    private static int badBarrelSortPointValue = 50;
+
+    public override void Awake()
+    {
+        base.Awake();
+        highScoreUiTextMain.text = "High Score: " + highscoreVal.runTimeValueScore;
+        highScoreUiTextInfo.text = "High Score: " + highscoreVal.runTimeValueScore;
+    }
+
     public void StartGame(GameMode newMode)
     {
         switch (newMode)
@@ -49,9 +71,9 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
     private void StartStoryMode()
     {
         currentGameMode = GameMode.story;
-        timer.SetTimer(0, 15);
-        spawnManager.SetSpawner(1, 3);
-        scoreManager.SetScoreManager(25,75);
+        timer.SetTimer(timerMin, timerSec);
+        spawnManager.SetSpawner(fastestSpawnRateStory, slowestSpawnRateStory);
+        scoreManager.SetScoreManager(goodBarrelSortPointValue, badBarrelSortPointValue);
         //loadScene
         SceneManager.LoadScene("MainGame");
         //set up canvas
@@ -69,7 +91,8 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
         currentGameMode = GameMode.endless;
         timer.EndlessTimer();
         //set endles spawner
-        scoreManager.SetScoreManager(25, 75);
+        spawnManager.SetSpawner(slowestSpawnRateEndless, fastestSpawnRateEndless);
+        scoreManager.SetScoreManager(goodBarrelSortPointValue, badBarrelSortPointValue);
         //load scene
         SceneManager.LoadScene("MainGame");
         //set up canvas
@@ -78,14 +101,19 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
         gameUiPanel.SetActive(true);
         //activate spawner
         spawnManager.spawnerActive = true;
+        spawnManager.startEndlessSpawn();
         scoreManager.scoreManagerActive = true;
     }
 
     public void EndGameMode(bool win)
     {
+        highscoreVal.runTimeValueScore = scoreManager.currentScore;
         timer.timerRunning = false;
         spawnManager.spawnerActive = false;
         scoreManager.scoreManagerActive = false;
+        //set score
+        highScoreUiTextMain.text = "High Score: " + highscoreVal.runTimeValueScore;
+        highScoreUiTextInfo.text = "High Score: " + highscoreVal.runTimeValueScore;
 
         if (win)
         {
@@ -109,4 +137,5 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
     {
         currentGameMode = newMode;
     }
+
 }

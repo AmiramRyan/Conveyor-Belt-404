@@ -475,6 +475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 0}
-  turningSpeed: 0.2
+  turningSpeed: 100
   dir: 0
   btn_anim: {fileID: 0}
