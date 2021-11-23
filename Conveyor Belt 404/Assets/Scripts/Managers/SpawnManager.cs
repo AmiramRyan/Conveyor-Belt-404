@@ -75,7 +75,6 @@ public class SpawnManager : GenericSingletonClass_spawn<MonoBehaviour>
     IEnumerator FasterSpawnCo()
     {
         changeMax = !changeMax;
-        Debug.Log(changeMax);
         yield return new WaitForSeconds(timeBetweenEndlessProgress);
         //change the spawn delay
         if (changeMax)

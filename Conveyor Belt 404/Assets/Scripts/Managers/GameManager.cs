@@ -22,6 +22,7 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
     public Text highScoreUiTextMain;
     public Text highScoreUiTextInfo;
     public HighScoreScript highscoreVal;
+    public Text EndText;
 
     private GameMode currentGameMode;
     [Header("Game Stats")]
@@ -31,6 +32,8 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
     [SerializeField] private float slowestSpawnRateStory;
     [SerializeField] private float fastestSpawnRateEndless;
     [SerializeField] private float slowestSpawnRateEndless;
+    [SerializeField] private string loseText;
+    [SerializeField] private string winText;
 
     private static int goodBarrelSortPointValue = 25;
     private static int badBarrelSortPointValue = 50;
@@ -118,6 +121,8 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
         if (win)
         {
             //load scene and give win text
+            EndText.text = winText;
+            
             //win text
             infoPanel.SetActive(true);
             mainMenuPanel.SetActive(false);
@@ -125,8 +130,9 @@ public class GameManager : GenericSingletonClass_GameManager<MonoBehaviour>
         }
         else
         {
-            //load scene and give lose text
             //lose text
+            EndText.text = loseText;
+            //load scene and give lose text
             infoPanel.SetActive(true);
             mainMenuPanel.SetActive(false);
             gameUiPanel.SetActive(false);
